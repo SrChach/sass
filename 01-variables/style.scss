@@ -1,0 +1,55 @@
+/*	Variables:
+ *	Se declaran con la sintaxis $nombre_variable
+ *	Tienen Scope (es importante)
+ */
+
+$primary-color: white;
+$size: 18px;
+$atributo-tipo-array: 1px solid red;
+.multiplicacion-pixeles {
+	font-size: $size * 2;
+	color: $primary-color;
+}
+
+.impresion-variables {
+	border: $atributo-tipo-array;
+	color: $primary-color;
+}
+
+/*	Ejemplo de Scope de las variables
+ *	Se usa la global $primary-color y se crea una local con el mismo nombre.
+ *	La global es sobre-escrita en por la local sólo en el Scope de esta
+ */
+.de-variable-local {
+	//	Declaración local de una variable
+	$primary-color: orange;
+	background: $primary-color;
+}
+
+.de-variable-global {
+	background: $primary-color;
+}
+
+/*	Propiedad !default:
+ *	Si ya existe/encuentra una variable con ese nombre, la toma.
+ *	Si no, la crea con las características que le indiquemos.
+ */
+.default-prueba {
+	//	Default creado
+	$default-creado: 13px !default;
+	//	Default tomado
+	$primary-color: black !default;
+	height: $default-creado;
+	color: $primary-color;
+}
+
+/*	Propiedad !global
+ *	Sobreescribe una variable global desde otro scope
+ */
+.sobreescribe-primary {
+	$primary-color: #00ff22 !global;
+}
+
+.imprime-primary {
+	color: $primary-color;
+}
