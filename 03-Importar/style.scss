@@ -1,0 +1,26 @@
+/*	Importación de otro archivo: @import
+ */
+@import "importar";
+
+body {
+	background: $color;
+}
+
+/*	Ejemplo de herencia de atributos: @extend
+ */
+.menu {
+	background: $color;
+	font-size: .9em;
+	display: flex;
+	&-item {
+		text-transform: uppercase;
+	}
+	&-link {
+		text-decoration: none;
+	}
+}
+
+.menu-secondary {
+	@extend .menu;
+	flex-direction: column;
+}
