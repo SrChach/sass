@@ -1,0 +1,91 @@
+/*	Nesting/Anidamiento
+ */
+
+h2 {
+	/*	El selector ">" se refiere a los hijos de un elemento
+	 */
+	> a {
+		text-transform: uppercase;
+	}
+
+	/*	El selector "+" se refiere a un elemento que está 
+	 *		justo después del otro
+	 */
+	+ p {
+		color: red;
+	}
+}
+
+.button {
+	background: red;
+	/*	El selector "&" sirve para repetir EXPLICITAMENTE
+	 *		al selector padre
+	 */
+	&:hover {
+		background: green;
+	}
+
+	&::after {
+		content: ".00";
+	}
+}
+
+/*	BEM Bloque - Elemento - Modificador:
+ *		Bloque: Componente
+ *		Elemento: Partes de ese componente
+ *		Modificador: Variaciones
+ */
+.bloque {	//	Ejemplo de creación de un componente
+	$font-size: 1em;
+	display: table;
+	&-item {
+		font-size: $font-size;
+	}
+	&-link {
+		font-weight: bold;
+	}
+	&-medium-size {
+		font-size: $font-size * 0.5;
+	}
+}
+
+/*	Ejemplo, un widget con margin 0 y margin de 1em si esta en el footer
+ *		Recordarorio: & repite al padre
+ */
+.widget {
+	margin: 0;
+	footer & {
+		margin: 1em;
+	}
+}
+
+/*	Ejemplo de lista con ul que puede tener li o ul, los ul con el
+ *		mismo estilo que el padre
+ */
+.lista {
+	//	Se apunta a si mismo y a su ul hijo
+	&, ul {
+		list-style: none;
+	}
+}
+
+/*	Ejercicio: Si tiene la clase btn, es verde. 
+ *		Si es un btn hijo de a, tiene color rojo
+ */
+.btn {
+	color: green;
+	a & {
+		color: red;
+	}
+}
+
+/*	@at-root toma los valores de una variable local, pero no
+ *		 compila el elemento como hijo, si no al nivel de la raiz
+ */
+.menu {
+	$menu-bg: blue;
+	background: $menu-bg;
+	@at-root .icon-menu {
+		color: $menu-bg;
+	}
+}
