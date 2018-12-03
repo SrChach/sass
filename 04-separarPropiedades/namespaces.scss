@@ -1,0 +1,32 @@
+/*	Los ":" indican propiedad. Ejemplo: font tiene las propiedades "family" y Size"
+ */
+a {
+	font: {
+		family: Open Sans, sans-serif;
+		size: 1em;
+	}
+}
+
+/*	Anidamiento de propiedades usando "propiedad: { }" / Minuto 12 /
+ */
+.banner {
+	$w: 400px;	// width
+	$h: $w * .75;	// height
+	width: $w;
+	height: $h;
+	background: {
+		image: 	url(arbol.png), // @1
+				url(casa.png),	// @2
+				url(fondo.jpg);	// @3
+		size:	$w * .1,	// @1
+				$w * .5,	// @2
+				cover;		// @3
+		repeat: no-repeat;	// Para los 3 si no esta definido
+		position: center;
+	}
+	animation: {
+		name: flotar;
+		duration: 2s;
+		timing-function: linear;
+	}
+}
