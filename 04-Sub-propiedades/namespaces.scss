@@ -1,0 +1,32 @@
+/*	Los ":" indican propiedad. Ejemplo: font tiene las propiedades "family" y Size"
+ */
+a {
+	font: {
+		family: Open Sans, sans-serif;
+		size: 1em;
+	}
+}
+
+.banner {
+	background: {
+		$w: 400px;
+		$h: $w * .75;
+		image: 	url(arbol.jpg),
+				url(casa.png),
+				url(fondo.jpg);
+		size: 	$w / 10,
+				$w / 2,
+				cover;
+		position: center;
+		repeat: no-repeat;
+	}
+
+	animation: {
+		name: flotar;
+		duration: 2s;
+		timing-function: linear;
+	}
+	/*	Es lo mismo que:
+	 *	animation: flotar 2s linear;
+	 */
+}

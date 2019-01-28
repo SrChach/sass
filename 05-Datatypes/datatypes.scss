@@ -1,0 +1,64 @@
+/*	o7 tipos de datos
+	Numbers
+	String
+	Booleans
+	Colors
+	Lists
+	Maps
+	Null
+*/
+
+.data-number {
+	$number: 50px;
+	type: type-of($number);
+	value: $number;
+}
+
+.data-string {
+	$str: "hola mundo";
+	type: type-of($str);
+	value: $str;
+}
+
+.data-color {
+	$color1: white;
+	$color2: #123123;
+	type1: type-of($color1);
+	type2: type-of($color2);
+	value1: $color1;
+	value2: $color2;
+}
+
+.data-bool {
+	$bool: 10 > 5;
+	type: type-of($bool);
+	value: $bool;
+}
+
+.data-null {
+	$null: null;
+	type: type-of($null);
+	value: $null;
+}
+
+.data-list {
+	$list: hola mundo, adios mundo cruel xd, putos todos v;
+	type: type-of($list);
+	value: $list;
+	length: length($list);
+	first-value: nth($list, 3);
+}
+
+//	Son propiedad-valor, "maps"
+.data-map {
+	$networks: (
+		facebook: blue,
+		youtube: red,
+		github: gray,
+		snapchat: yellow
+	);
+	value: map-get($networks, snapchat);
+	type: type-of($networks);
+}
+
+/*Faltan 27 mins*/
