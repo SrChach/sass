@@ -1,0 +1,19 @@
+%placeholder {
+	width: 20px;
+	height: 20px;
+	background-color: red;
+}
+
+.banner {
+	@extend %placeholder;
+}
+
+/*	Cosas de mixins	*/
+@mixin un-mixin($color){
+	background-color: $color;
+	font-size: 12px;
+}
+
+.de-mixin {
+	@include un-mixin(white)
+}

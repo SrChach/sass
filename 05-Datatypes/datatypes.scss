@@ -61,4 +61,13 @@
 	type: type-of($networks);
 }
 
-/*Faltan 27 mins*/
+
+/*Esto iba en otro lado*/
+.operaciones {
+	$num1: 1;
+	$num2: 5;
+	$num3: $num1 + $num2;
+	value: $num3;
+	type: type-of($num3);
+	font: #{7px * 2} / #{5px * 5};
+}

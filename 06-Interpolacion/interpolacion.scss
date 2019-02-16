@@ -1,0 +1,14 @@
+/*	Se usa para construir expresiones con el valor de una variable
+ 		//Se usa asi #{ variable }
+ */
+
+$var: 2;
+$company: tmcc;
+
+// Construir una interpolación con variables y interpolación
+div-#{$company}:nth-child(#{$var}){
+	background: red;
+	&::before {
+		content: "Bienvenido a #{$company}"
+	}
+}
