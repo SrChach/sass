@@ -1,0 +1,58 @@
+//	Crear Mixin: @mixin mixin-name(){}
+//	Usar mixin: @include mixin-name();
+
+// el primer parametro es por defecto
+@mixin mi-mixin($display: inline-block, $padding){
+	display: $display;
+	padding: $padding;
+	line-height: 3;
+}
+
+.boton {
+	@include mi-mixin(inline-block, 0 5em);
+	&.small {
+		@include mi-mixin(block, 0 3em); 
+	}
+}
+
+// asi sabes que es que
+.recomendado {
+	@include mi-mixin($padding: 0, $display: inline);
+}
+
+/*	Ejemplo 2
+ */
+
+//	none por defecto es como null
+@mixin widget($padding: none, $header-font, $header-color){
+	display: block;
+	padding: $padding;
+	header {
+		font: $header-font;
+		color: $header-color;
+	}
+}
+
+.widget {
+	@include widget(1em, Arial, blue);
+}
+
+/*	Ejemplo 3: Mixin multiple;
+ */
+$varios: 1px solid red, 2px solid blue, 5px solid white, 10px solid yellow;
+@mixin multiple($varios-valores...){
+	box-shadow: $varios-valores;
+}
+
+.mixin-varios-1 {
+	@include multiple(1px solid red);
+}
+
+.mixin-varios-4 {
+	@include multiple(1px solid red, 2px solid blue, 5px solid white, 10px solid yellow);
+}
+
+//	Lo mismo que el de arriba, pasandome una lista
+.mixin-varios-list {
+	 @include multiple($varios);
+}
