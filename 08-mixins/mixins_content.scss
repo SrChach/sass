@@ -1,0 +1,47 @@
+/* Grid System de 12 columnas
+ * Mixin que calcula el ancho en porcentaje dependiendo del numero de columnas
+ *
+ *
+ */
+
+@mixin grid($cols, $total-cols: 12){
+	width: percentage($cols / 12);
+}
+
+.col-6 {
+	@include grid(6);
+}
+
+.col-12 {
+	@include grid(12);
+}
+
+.grid-variable {
+	@include grid(7, 15);
+}
+
+/* Media Queries: Mixin que cree media-queries */
+//	Ejemplo de todo lo que tendríamos que escribir CADA VEZ que se haga un media query
+.selector-ejemplo {
+	@media screen and (min-width: 20em){
+		a {	font-size: 12px;	}
+	}
+}
+
+//	Solo usar max-width en minor breakpoints, casos especiales de fix
+@mixin mediaquery($min-width){
+	@media screen and (min-width: $min-width){
+		@content;
+	}	
+}
+
+//	Para esto usamos content xDDD
+.box {
+	color: red;
+	@include mediaquery(50px){
+		color: green;
+	}
+	@include mediaquery(120px){
+		color: white;
+	}
+}

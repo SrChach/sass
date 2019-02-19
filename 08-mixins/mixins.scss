@@ -56,3 +56,19 @@ $varios: 1px solid red, 2px solid blue, 5px solid white, 10px solid yellow;
 .mixin-varios-list {
 	 @include multiple($varios);
 }
+
+/*	Cómo pasar contenido al Mixin	*/
+//	@content quiere decir que puedes declarar un bloque de CSS ahi
+@mixin menu(){
+	list-style: none;
+	@content;
+}
+
+.menu {
+	@include menu {
+		li {
+			color: black;
+			float: left;
+		}
+	};
+}
