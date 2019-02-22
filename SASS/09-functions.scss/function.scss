@@ -1,0 +1,29 @@
+/*	Trozos de codigo reutilizable para dividir en tareas
+ */
+
+/*	CSS functions (NO es SCSS) */
+// rgb()
+$color: rgb(255, 0, 255);
+.rgb {
+	color: $color;
+}
+
+// calc()
+.rgb {
+	width: calc(100% - 20px);
+}
+
+// scale()
+.box {
+	transform: scale(1.2, .6);
+}
+
+// translate(x, y)
+// rotate()
+// linear-gradient()
+// repeating-linear-gradient()
+// radial-gradient()
+// attr()
+
+
+/* Ahora si, funciones Nativas en SCSS */
